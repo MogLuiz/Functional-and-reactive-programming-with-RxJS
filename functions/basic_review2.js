@@ -13,3 +13,14 @@ function runningAnything(fn) {
 
 runningAnything(goodMorning)
 runningAnything(goodAfternoon)
+
+// Return a function from another function
+
+function potency(base) {
+    return function(exp) {
+        return Math.pow(base, exp)
+    }
+}
+
+const potency2 = potency(2)
+console.log(potency2(8))
