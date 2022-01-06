@@ -24,3 +24,6 @@ function potency(base) {
 
 const potency2 = potency(2)
 console.log(potency2(8))
+
+const pot34 = potency(3)(4)
+console.log(pot34)
