@@ -4,6 +4,7 @@ const path = require("path")
 const way = path.join(__dirname, "data.txt")
 
 const showContent = (err, content) => {
-    console.log(content)
+    console.log(content.toString())
 }
 
+fs.readFile(way, {}, showContent)
