@@ -31,3 +31,8 @@ Array.prototype.myMap = function(fn) {
     }
     return mapped
 }
+
+const getNameWithMyMap = cart.myMap(item => item.name)
+const totalPriceWithMyMap = cart.myMap(item => item.price * item.quantity)
+
+console.log(getNameWithMyMap, totalPriceWithMyMap)
