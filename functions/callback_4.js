@@ -22,3 +22,9 @@ Array.prototype.myFilter = function(fn) {
     }
     return filtered
 }
+
+const validItems2 = cart
+                    .myFilter(filterQuantityGreaterZero)
+                    .map(getName)
+
+console.log(validItems2)
