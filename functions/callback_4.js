@@ -12,5 +12,13 @@ const getName = item => item.name
 const validItems = cart
                     .filter(filterQuantityGreaterZero)
                     .map(getName)
-                    
+
 console.log(validItems)
+
+Array.prototype.myFilter = function(fn) {
+    const filtered = []
+    for(let i = 0; i < this.length; i++) {
+      if( fn(this[i], i, this) ) filtered.push(this[i])
+    }
+    return filtered
+}
