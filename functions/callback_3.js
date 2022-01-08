@@ -15,7 +15,19 @@ const cart = [
     { name: "Scissors",  quantity: 1, price: 19.20 },
 ]
 
-const namesArray = cart.map(item => item.name)
+const getName = cart.map(item => item.name)
 const totalPrice = cart.map(item => item.price * item.quantity)
 
-console.log({namesArray, totalPrice})
+console.log({getName, totalPrice})
+
+
+// Building my own MAP method
+
+Array.prototype.myMap = function(fn) {
+    const mapped = []
+    for(let i = 0; i < this.length; i++) {
+       result = fn(this[i], i, this) 
+       mapped.push(result)
+    }
+    return mapped
+}
