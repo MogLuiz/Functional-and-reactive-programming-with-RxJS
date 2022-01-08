@@ -8,9 +8,14 @@ const letter = names.map(firstLetter)
 console.log(names, letter)
 
 const cart = [
-    { nome: "Pen",  quantity: 10, price: 7.99 },
-    { nome: "printer",  quantity: 0, price: 649.50 },
-    { nome: "Copybook",  quantity: 4, price: 27.10 },
-    { nome: "Pencil",  quantity: 3, price: 2.50 },
-    { nome: "Scissors",  quantity: 1, price: 19.20 },
+    { name: "Pen",  quantity: 10, price: 7.99 },
+    { name: "printer",  quantity: 0, price: 649.50 },
+    { name: "Copybook",  quantity: 4, price: 27.10 },
+    { name: "Pencil",  quantity: 3, price: 2.50 },
+    { name: "Scissors",  quantity: 1, price: 19.20 },
 ]
+
+const namesArray = cart.map(item => item.name)
+const totalPrice = cart.map(item => item.price * item.quantity)
+
+console.log({namesArray, totalPrice})
