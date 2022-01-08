@@ -5,3 +5,12 @@ const cart = [
     { name: "Pencil",  quantity: 3, price: 2.50 },
     { name: "Scissors",  quantity: 1, price: 19.20 },
 ]
+
+const filterQuantityGreaterZero = item => item.quantity > 0
+const getName = item => item.name
+
+const validItems = cart
+                    .filter(filterQuantityGreaterZero)
+                    .map(getName)
+                    
+console.log(validItems)
