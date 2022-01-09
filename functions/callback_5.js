@@ -14,3 +14,23 @@ const generalTotal = cart
                         .reduce(sumTotal)
 
 console.log(generalTotal)
+
+Array.prototype.myReduce = function(fn, initialValue) {
+    let acc = initialValue
+    for(let i = 0; i < this.length; i++) {
+        if(!acc && i === 0) {
+            acc = this[i]
+            continue
+        }
+
+        acc = fn(acc, this[i], i, this)
+    }
+
+    return acc
+}
+
+const generalTotal2 = cart
+                        .map(totalPrice)
+                        .myReduce(sumTotal)
+
+console.log(generalTotal2)
