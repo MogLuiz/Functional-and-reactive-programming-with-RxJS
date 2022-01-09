@@ -13,7 +13,7 @@ const generalTotal = cart
                         .map(totalPrice)
                         .reduce(sumTotal)
 
-console.log(generalTotal)
+// console.log(generalTotal)
 
 Array.prototype.myReduce = function(fn, initialValue) {
     let acc = initialValue
@@ -33,11 +33,11 @@ const generalTotal2 = cart
                         .map(totalPrice)
                         .myReduce(sumTotal)
 
-console.log(generalTotal2)
+// console.log(generalTotal2)
 
 
 const isPositive = cart.every(item => item.quantity >= 0)
-console.log(isPositive)
+// console.log(isPositive)
 
 const tchurma = [
     { id: 12, name: "Frederico", age: 17 },
@@ -46,7 +46,7 @@ const tchurma = [
     { id: 85, name: "Lennon", age: 20 },
 ]
 
-console.log(tchurma.every(item => item.age >= 18))
+// console.log(tchurma.every(item => item.age >= 18))
 
 const isPrime = (value) => {
     for (let i = 2; i < value; i++) {
@@ -55,9 +55,13 @@ const isPrime = (value) => {
     return value > 1
 }
 
-console.log(tchurma.some(item => isPrime(item.age)))
+// console.log(tchurma.some(item => isPrime(item.age)))
 
 const foundUser = tchurma.find(user => user.name.startsWith("L"))
 const foundId = tchurma.find(user => user.id === 85)
 
-console.log(foundUser.name,foundId)
+// console.log(foundUser.name,foundId)
+
+const peopleName = tchurma.filter(item => item.name.includes("Fr"))
+
+console.log(peopleName)
