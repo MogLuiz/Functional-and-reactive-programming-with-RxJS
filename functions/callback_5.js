@@ -34,3 +34,16 @@ const generalTotal2 = cart
                         .myReduce(sumTotal)
 
 console.log(generalTotal2)
+
+
+const isPositive = cart.every(item => item.quantity >= 0)
+console.log(isPositive)
+
+const tchurma = [
+    { id: 12, name: "Frederico", age: 17 },
+    { id: 47, name: "Francisca", age: 16 },
+    { id: 77, name: "Ramon", age: 48 },
+    { id: 85, name: "Lennon", age: 20 },
+]
+
+console.log(tchurma.every(item => item.age >= 18))
