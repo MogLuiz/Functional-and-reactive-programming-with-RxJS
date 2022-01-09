@@ -47,3 +47,12 @@ const tchurma = [
 ]
 
 console.log(tchurma.every(item => item.age >= 18))
+
+const isPrime = (value) => {
+    for (let i = 2; i < value; i++) {
+        if (value % i === 0) return false 
+    }
+    return value > 1
+}
+
+console.log(tchurma.some(item => isPrime(item.age)))
