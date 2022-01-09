@@ -5,3 +5,19 @@ const cart = [
     { name: "Pencil",  quantity: 3, price: 5.82, fragility: false },
     { name: "Scissors",  quantity: 1, price: 19.20, fragility: true },
 ]
+
+
+const result = cart
+                .filter(item => item.fragility)
+                .map(item => item.price * item.quantity)
+                .reduce((acc, el) => {
+                    const newQuantity = acc.quantity + 1
+                    const newTotal = acc.total + el
+                    return {
+                        quantity: newQuantity,
+                        total: newTotal,
+                        average: newTotal / newQuantity
+                    }
+                }, { quantity: 0, total: 0,  average: 0 }).average
+
+console.log(result)  
