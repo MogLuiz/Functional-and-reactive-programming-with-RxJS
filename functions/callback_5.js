@@ -56,3 +56,8 @@ const isPrime = (value) => {
 }
 
 console.log(tchurma.some(item => isPrime(item.age)))
+
+const foundUser = tchurma.find(user => user.name.startsWith("L"))
+const foundId = tchurma.find(user => user.id === 85)
+
+console.log(foundUser.name,foundId)
