@@ -6,6 +6,20 @@ const cart = [
     { name: "Scissors",  quantity: 1, price: 19.20, fragility: true },
 ]
 
+Array.prototype.myReduce = function(fn, initialValue) {
+    let acc = initialValue
+    for(let i = 0; i < this.length; i++) {
+        if(!acc && i === 0) {
+            acc = this[i]
+            continue
+        }
+
+        acc = fn(acc, this[i], i, this)
+    }
+
+    return acc
+}
+
 const isFragility = item => item.fragility
 const getTotal = item => item.price * item.quantity
 const getAverage = (acc, el) => {
@@ -22,6 +36,6 @@ const initialAverage = { quantity: 0, total: 0,  average: 0 }
 const result = cart
                 .filter(isFragility)
                 .map(getTotal)
-                .reduce(getAverage, initialAverage)
+                .myReduce(getAverage, initialAverage)
 
 console.log(result)  
