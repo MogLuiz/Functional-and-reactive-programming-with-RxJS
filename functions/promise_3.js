@@ -7,4 +7,10 @@ const numberGenerateEntry = (min, max) => {
     })
 }
 
-numberGenerateEntry(10, 30).then(console.log)
+const numberMutipliesByTen = number => number * 10
+const manipulingResponseText = number => `O número gerado multiplicado por 10 foi ${number}`
+
+numberGenerateEntry(1, 10)
+                    .then(numberMutipliesByTen)
+                    .then(manipulingResponseText)
+                    .then(console.log)
