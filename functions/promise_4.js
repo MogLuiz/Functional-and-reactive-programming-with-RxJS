@@ -9,9 +9,13 @@ const numberGenerateEntry = (min, max, time) => {
     })
 }
 
-const manyNumbersGenerate = () => Promise.all([
-    numberGenerateEntry(1, 60, 4000),
-    numberGenerateEntry(1, 10, 1000),
-    numberGenerateEntry(1, 5, 400),
-    numberGenerateEntry(1, 3, 1000),
-])
+const manyNumbersGenerate = () => {
+    return Promise.all([
+        numberGenerateEntry(1, 60, 4000),
+        numberGenerateEntry(1, 10, 1000),
+        numberGenerateEntry(1, 5, 400),
+        numberGenerateEntry(1, 3, 1000),
+    ])
+}
+
+manyNumbersGenerate().then(response => console.log(response))
