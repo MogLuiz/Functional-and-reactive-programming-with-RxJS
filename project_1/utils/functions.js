@@ -27,9 +27,13 @@ const readFile = (path) => {
     })
 }
 
-const readFiles = () => {}
+const readFiles = (ways) => {
+    return Promise.all(ways.map(way => readFile(way)))
+}
 
 module.exports = {
     readDirectory,
     elementsEndingWith,
+    readFile,
+    readFiles,
 }
