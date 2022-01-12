@@ -1,9 +1,10 @@
 // Packages
 const fs = require("fs")
+const path = require("path")
 
 const readDirectory = (way) => {
     let files = fs.readdirSync(way)
-    console.log(files)
+    return files.map(file => path.join(way, file))
 }
 
 module.exports = {

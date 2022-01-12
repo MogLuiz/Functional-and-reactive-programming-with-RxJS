@@ -6,4 +6,6 @@ const fn = require("./utils/functions")
 
 const way = path.join(__dirname, "..", "data", "legends")
 
-fn.readDirectory(way)
+const files = fn.readDirectory(way)
+
+console.log(files)
