@@ -14,6 +14,9 @@ const readDirectory = (way) => {
     })
 }
 
+const elementsEndingWith = (array, standard) => array.filter(item => item.endsWith(standard))
+
 module.exports = {
     readDirectory,
+    elementsEndingWith,
 }
