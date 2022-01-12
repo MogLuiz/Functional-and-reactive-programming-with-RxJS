@@ -8,14 +8,19 @@ const numberGenerateEntry = (min, max, forbiddenNumbers) => {
     })
 }
 
-const megaSenaGenerate = async (numberQuantity) => {
-    const numbers = []
-    for(let _ of Array(numberQuantity).fill()) {
-        numbers.push(await numberGenerateEntry(1, 60, numbers))
+const megaSenaGenerate = async (numberQuantity, attempt) => {
+    try {
+        const numbers = []
+        for(let _ of Array(numberQuantity).fill()) {
+            numbers.push(await numberGenerateEntry(1, 60, numbers))
+        }
+        return numbers
+    } catch (err) {
+        if(attempt > 5) throw "Que chato!"
+        return megaSenaGenerate(numberQuantity, attempt + 1)        
     }
-    return numbers
 }
 
-megaSenaGenerate(8)
-                    .then(console.log)
-                    .catch(console.log)
+megaSenaGenerate(150)
+                .then(console.log)
+                .catch(console.log)
