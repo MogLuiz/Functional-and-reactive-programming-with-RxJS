@@ -15,7 +15,7 @@ const symbols = [
 fn.readDirectory(way)
     .then(fn.elementsEndingWith(".srt"))
     .then(fn.readFiles)
-    .then(content => content.join("\n"))
+    .then(fn.contentConcatenate)
     .then(allContent => allContent.split("\n"))
     .then(fn.removeElementsIfEmpty)
     .then(fn.removeIfDontIncludesStandardText("-->"))

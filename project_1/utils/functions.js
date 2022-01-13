@@ -29,6 +29,8 @@ const readFile = (path) => {
     })
 }
 
+const contentConcatenate = content => content.join("\n")
+
 
 const readFiles = (ways) => {
     return Promise.all(ways.map(way => readFile(way)))
@@ -74,5 +76,6 @@ module.exports = {
     removeElementsIfEmpty,
     removeIfDontIncludesStandardText,
     removeIfJustNumber,
-    removeSymbols,   
+    removeSymbols,
+    contentConcatenate,   
 }
