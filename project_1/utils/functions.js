@@ -31,7 +31,7 @@ const readFiles = (ways) => {
     return Promise.all(ways.map(way => readFile(way)))
 }
 
-const removeIfEmpty = (array) => array.filter(item => item.trim())
+const removeElementsIfEmpty = (array) => array.filter(item => item.trim())
 
 const removeIfDontIncludesStandardText = (array, standard) => array.filter(item => !item.includes(standard))
 
@@ -47,7 +47,7 @@ module.exports = {
     elementsEndingWith,
     readFile,
     readFiles,
-    removeIfEmpty,
+    removeElementsIfEmpty,
     removeIfDontIncludesStandardText,
     removeIfJustNumber,   
 }
