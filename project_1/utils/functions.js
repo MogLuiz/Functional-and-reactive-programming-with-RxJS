@@ -35,11 +35,19 @@ const removeIfEmpty = (array) => array.filter(item => item.trim())
 
 const removeIfDontIncludesStandardText = (array, standard) => array.filter(item => !item.includes(standard))
 
+const removeIfJustNumber = (array) => {
+    return array.filter(item => {
+        const number = parseInt(item.trim())
+        return !(number !== 0 && !!number)
+    })
+}
+
 module.exports = {
     readDirectory,
     elementsEndingWith,
     readFile,
     readFiles,
     removeIfEmpty,
-    removeIfDontIncludesStandardText,   
+    removeIfDontIncludesStandardText,
+    removeIfJustNumber,   
 }
