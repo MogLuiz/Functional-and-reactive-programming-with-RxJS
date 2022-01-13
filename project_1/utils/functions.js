@@ -14,7 +14,7 @@ const readDirectory = (way) => {
     })
 }
 
-const elementsEndingWith = (array, standard) => array.filter(item => item.endsWith(standard))
+const elementsEndingWith = (array, standardText) => array.filter(item => item.endsWith(standardText))
 
 const readFile = (path) => {
     return new Promise((resolve, reject) => {
@@ -33,10 +33,13 @@ const readFiles = (ways) => {
 
 const removeIfEmpty = (array) => array.filter(item => item.trim())
 
+const removeIfDontIncludesStandardText = (array, standard) => array.filter(item => !item.includes(standard))
+
 module.exports = {
     readDirectory,
     elementsEndingWith,
     readFile,
     readFiles,
     removeIfEmpty,
+    removeIfDontIncludesStandardText,   
 }
