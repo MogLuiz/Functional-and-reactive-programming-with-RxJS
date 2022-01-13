@@ -31,9 +31,12 @@ const readFiles = (ways) => {
     return Promise.all(ways.map(way => readFile(way)))
 }
 
+const removeIfEmpty = (array) => array.filter(item => item.trim())
+
 module.exports = {
     readDirectory,
     elementsEndingWith,
     readFile,
     readFiles,
+    removeIfEmpty,
 }
