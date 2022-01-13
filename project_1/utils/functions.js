@@ -53,6 +53,19 @@ const removeIfJustNumber = (array) => {
 }
 
 
+const removeSymbols = (symbols) => {
+    return function(array) {
+        return array.map((item) => {
+            let textWithoutSymbols = item
+            symbols.forEach((symbol) => {
+                textWithoutSymbols = textWithoutSymbols.split(symbol).join("")
+            })
+            return textWithoutSymbols
+        })
+    } 
+}
+
+
 module.exports = {
     readDirectory,
     elementsEndingWith,
@@ -60,5 +73,6 @@ module.exports = {
     readFiles,
     removeElementsIfEmpty,
     removeIfDontIncludesStandardText,
-    removeIfJustNumber,   
+    removeIfJustNumber,
+    removeSymbols,   
 }
