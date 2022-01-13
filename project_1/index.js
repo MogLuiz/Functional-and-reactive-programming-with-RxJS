@@ -6,6 +6,12 @@ const fn = require("./utils/functions")
 
 const way = path.join(__dirname, "..", "data", "legends")
 
+const symbols = [
+    ".", "?", "-", ",", "", "♪",
+    "_", "<i>", "</i>", "\r", "[",
+    "]", "(", ")"
+]
+
 fn.readDirectory(way)
     .then(fn.elementsEndingWith(".srt"))
     .then(fn.readFiles)
