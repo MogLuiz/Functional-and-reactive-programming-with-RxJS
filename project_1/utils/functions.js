@@ -29,7 +29,11 @@ const readFile = (path) => {
     })
 }
 
+
 const contentConcatenate = content => content.join("\n")
+
+
+const separateByLines = allContent => allContent.split("\n")
 
 
 const readFiles = (ways) => {
@@ -77,5 +81,6 @@ module.exports = {
     removeIfDontIncludesStandardText,
     removeIfJustNumber,
     removeSymbols,
-    contentConcatenate,   
+    contentConcatenate,
+    separateByLines,   
 }
