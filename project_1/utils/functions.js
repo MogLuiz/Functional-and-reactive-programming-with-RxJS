@@ -30,7 +30,7 @@ const readFile = (path) => {
 }
 
 
-const contentConcatenate = content => content.join("\n")
+const contentConcatenate = content => content.join(" ")
 
 
 const separateByLines = allContent => allContent.split("\n")
