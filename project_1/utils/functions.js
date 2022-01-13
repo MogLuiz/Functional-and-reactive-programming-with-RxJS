@@ -33,7 +33,9 @@ const readFiles = (ways) => {
 
 const removeElementsIfEmpty = (array) => array.filter(item => item.trim())
 
-const removeIfDontIncludesStandardText = (array, standard) => array.filter(item => !item.includes(standard))
+const removeIfDontIncludesStandardText = (standard) => {
+    return (array) => array.filter(item => !item.includes(standard))
+}
 
 const removeIfJustNumber = (array) => {
     return array.filter(item => {
