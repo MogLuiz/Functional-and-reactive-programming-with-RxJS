@@ -72,6 +72,9 @@ const removeSymbols = (symbols) => {
 }
 
 
+const separateByWords = allContent => allContent.split(" ")
+
+
 module.exports = {
     readDirectory,
     elementsEndingWith,
@@ -82,5 +85,6 @@ module.exports = {
     removeIfJustNumber,
     removeSymbols,
     contentConcatenate,
-    separateByLines,   
+    separateByLines,
+    separateByWords,   
 }
