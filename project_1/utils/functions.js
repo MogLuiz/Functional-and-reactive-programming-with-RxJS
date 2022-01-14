@@ -109,5 +109,6 @@ module.exports = {
     contentConcatenate,
     separateByLines,
     separateByWords,
-    mergingWords,   
+    mergingWords,
+    sortByNumericAttribute,   
 }
