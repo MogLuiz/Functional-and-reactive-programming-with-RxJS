@@ -62,11 +62,9 @@ const removeIfJustNumber = (array) => {
 const removeSymbols = (symbols) => {
     return function(array) {
         return array.map((item) => {
-            let textWithoutSymbols = item
-            symbols.forEach((symbol) => {
-                textWithoutSymbols = textWithoutSymbols.split(symbol).join("")
-            })
-            return textWithoutSymbols
+            return symbols.reduce((acc, symbol) => {
+                return acc.split(symbol).join("")
+            }, item)
         })
     } 
 }
