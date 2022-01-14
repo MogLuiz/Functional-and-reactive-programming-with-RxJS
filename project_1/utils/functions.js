@@ -78,8 +78,8 @@ const separateByWords = allContent => allContent.split(" ")
 const mergingWords = (words) => {
     return words.reduce((fused, word) => {
         const wordLowerCase = word.toLowerCase()
-        if(fused[wordLowerCase]) fused[wordLowerCase] += 1
-        fused[wordLowerCase] = 1
+        if(fused[wordLowerCase]) fused[wordLowerCase] += 1    
+         else fused[wordLowerCase] = 1          
         return fused
     }, {})
 }
@@ -96,5 +96,6 @@ module.exports = {
     removeSymbols,
     contentConcatenate,
     separateByLines,
-    separateByWords,   
+    separateByWords,
+    mergingWords,   
 }
