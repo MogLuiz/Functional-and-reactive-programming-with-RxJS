@@ -75,6 +75,16 @@ const removeSymbols = (symbols) => {
 const separateByWords = allContent => allContent.split(" ")
 
 
+const mergingWords = (words) => {
+    return words.reduce((fused, word) => {
+        const wordLowerCase = word.toLowerCase()
+        if(fused[wordLowerCase]) fused[wordLowerCase] += 1
+        fused[wordLowerCase] = 1
+        return fused
+    }, {})
+}
+
+
 module.exports = {
     readDirectory,
     elementsEndingWith,
