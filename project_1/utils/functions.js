@@ -76,12 +76,15 @@ const separateByWords = allContent => allContent.split(" ")
 
 
 const mergingWords = (words) => {
-    return words.reduce((fused, word) => {
+    return Object.values(words.reduce((fused, word) => {
         const wordLowerCase = word.toLowerCase()
-        if(fused[wordLowerCase]) fused[wordLowerCase] += 1    
-         else fused[wordLowerCase] = 1          
+        const quantity = fused[wordLowerCase] ? fused[wordLowerCase].quantity + 1 : 1
+        fused[wordLowerCase] = {
+            name: wordLowerCase,
+            quantity
+        } 
         return fused
-    }, {})
+    }, {}))
 }
 
 
