@@ -3,8 +3,8 @@ const generateRandomNumber = (min, max) => {
     return parseInt(Math.random() * factor) + min
 }
 
-console.log(generateRandomNumber(5, 6))
-console.log(generateRandomNumber(5, 6))
-console.log(generateRandomNumber(5, 6))
-console.log(generateRandomNumber(5, 6))
-console.log(generateRandomNumber(5, 6))
+console.log(generateRandomNumber(1, 60))
+console.log(generateRandomNumber(1, 60))
+console.log(generateRandomNumber(1, 60))
+console.log(generateRandomNumber(1, 60))
+console.log(generateRandomNumber(1, 60))
