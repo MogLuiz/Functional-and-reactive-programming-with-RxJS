@@ -1,0 +1,1 @@
+const run = (fn, ...params) => fn(...params)

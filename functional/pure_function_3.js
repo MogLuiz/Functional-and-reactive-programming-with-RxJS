@@ -1,7 +1,7 @@
 let executionsAmount = 0 
 
 const sum = (a, b) => {
-    executionsAmount++
+    executionsAmount++ // observable side effect
     return a + b
 }
 
