@@ -6,7 +6,7 @@ const sorting = (array) => array.sort()
 const sortingNoSideEffect = (array) => [...array].sort()
 
 const numbers = [3, 1, 7, 9, 4, 6]
-const numbers2 = [3, 1, 7, 9, 4, 6]
+const numbers2 = Object.freeze([3, 1, 7, 9, 4, 6])
 
 sorting(numbers)
 sortingNoSideEffect(numbers2)
