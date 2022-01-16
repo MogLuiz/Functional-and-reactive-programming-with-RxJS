@@ -5,9 +5,16 @@ const person = {
 }
 
 // Atribuição por Referência
-const newPerson = person
+// const newPerson = person
+// newPerson.name = "Luizin"
+// newPerson.city = "Contagem"
 
-newPerson.name = "Luizin"
-newPerson.city = "Contagem"
+// Passagem por referência
+const changePerson = (newPerson) => {
+    newPerson.name = "Henrique"
+    newPerson.city = "Betim"
+}
+
+changePerson(person)
 
 console.log(person)
