@@ -1,7 +1,10 @@
 const person = {
     name: "Maria",
     height: "1.76",
-    city: "Belo Horizonte"
+    city: "Belo Horizonte",
+    address: {
+        street: "Belmiro"
+    }
 }
 
 // Atribuição por Referência
@@ -10,11 +13,13 @@ const person = {
 // newPerson.city = "Contagem"
 
 // Passagem por referência
-const changePerson = (newPerson) => {
+const changePerson = (Person) => {
+    const newPerson = { ...Person }
     newPerson.name = "Henrique"
     newPerson.city = "Betim"
+    return newPerson
 }
 
-changePerson(person)
-
+const result = changePerson(person)
+console.log(result)
 console.log(person)
