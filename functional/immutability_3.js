@@ -13,13 +13,14 @@ const person = {
 // newPerson.city = "Contagem"
 
 // Passagem por referência
-const changePerson = (Person) => {
-    const newPerson = { ...Person }
+const changePerson = (person) => {
+    const newPerson = { ...person }
     newPerson.name = "Henrique"
     newPerson.city = "Betim"
+    newPerson.address.street = "Santa Cecília"
     return newPerson
 }
 
-const result = changePerson(person)
-console.log(result)
+const newPerson = changePerson(person)
+console.log(newPerson)
 console.log(person)
