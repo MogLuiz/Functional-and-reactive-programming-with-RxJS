@@ -1,5 +1,6 @@
 // Currying with arrow function
 const textWithSizeBetween = (min) => (max) => (error) => (text) => {
+    // Lazy Evaluation
     const size = (text || "").trim().length
     
     if(size < min || size > max) {
@@ -14,6 +15,7 @@ function textWithSizeBetween2(min) {
     return function(max) {
         return function(error) {
             return function(text) {
+                // Lazy Evaluation
                 const size = (text || "").trim().length
 
                 if(size < min || size > max) {
