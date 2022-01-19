@@ -25,9 +25,10 @@ function textWithSizeBetween2(min) {
 }
 
     
-
+const forceStandardSize = textWithSizeBetween(4)(255)
 
 
 
 const p1 = { name: "A", price: 14.99, desc: 0.25 }
-textWithSizeBetween(4)(244)("Invalid Name!")(p1.name)
+// textWithSizeBetween(4)(244)("Invalid Name!")(p1.name)
+forceStandardSize("Invalid Name!")(p1.name)
