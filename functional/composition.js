@@ -5,12 +5,13 @@ const composer = (...fns) => (value) => {
 }
 
 const shout = (text) => text.toUpperCase()
-
 const emphasize = (text) => `${text}!!!!`
+const slowDown = (text) => text.split("").join(" ")
 
 const result = composer(
     shout,
-    emphasize
+    emphasize,
+    slowDown
 )("Para")
 
 console.log(result)
