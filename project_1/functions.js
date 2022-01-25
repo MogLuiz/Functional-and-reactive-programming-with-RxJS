@@ -14,6 +14,16 @@ const readDirectory = (way) => {
     })
 }
 
+const composer = (...fns) => (value) => {
+    return fns.reduce(async (acc, fn) => {
+        if(Promise.resolve(acc) === acc) {
+            return fn(await acc)
+        } else {
+            return fn(acc)
+        }
+    }, value)
+}
+
 
 const elementsEndingWith = (standardText) => (array) => array.filter(item => item.endsWith(standardText))
 
@@ -108,5 +118,6 @@ module.exports = {
     separateByLines,
     separateByWords,
     mergingWords,
-    sortByNumericAttribute,   
+    sortByNumericAttribute,
+    composer,   
 }
