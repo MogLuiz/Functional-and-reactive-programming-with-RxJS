@@ -18,4 +18,15 @@ const result = composer2(
     slowDown
 )("Para")
 
+const exaggerated = composer(
+    shout,
+    emphasize,
+    slowDown
+)
+
+const result2 = exaggerated("Para")
+const result3 = exaggerated("Cuidado piso molhado!")
+
 console.log(result)
+console.log(result2)
+console.log(result3)
