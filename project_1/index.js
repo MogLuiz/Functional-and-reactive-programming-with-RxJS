@@ -12,7 +12,7 @@ const symbols = [
     "]", "(", ")"
 ]
 
-const startingPoint = fn.composer(
+const wordsProcessing = fn.composer(
     fn.readDirectory,
     fn.elementsEndingWith(".srt"),
     fn.readFiles,
@@ -30,5 +30,6 @@ const startingPoint = fn.composer(
     fn.sortByNumericAttribute("quantity", "desc"),
 )
 
-startingPoint(way).then(console.log)
+wordsProcessing(way)
+    .then(console.log)
 
