@@ -2,6 +2,17 @@
 const fs = require("fs")
 const path = require("path")
 
+const composer = (...fns) => (value) => {
+    return fns.reduce(async (acc, fn) => {
+        if(Promise.resolve(acc) === acc) {
+            return fn(await acc)
+        } else {
+            return fn(acc)
+        }
+    }, value)
+}
+
+
 const readDirectory = (way) => {
     return new Promise((resolve, reject) => {
         try { 
@@ -12,16 +23,6 @@ const readDirectory = (way) => {
             reject(err)
         }
     })
-}
-
-const composer = (...fns) => (value) => {
-    return fns.reduce(async (acc, fn) => {
-        if(Promise.resolve(acc) === acc) {
-            return fn(await acc)
-        } else {
-            return fn(acc)
-        }
-    }, value)
 }
 
 
