@@ -4,11 +4,15 @@ const composer = (...fns) => (value) => {
     }, value)
 }
 
+const composer2 = (fn1, fn2, fn3) => (value) => {
+    return fn3(fn2(fn1(value)))
+}
+
 const shout = (text) => text.toUpperCase()
 const emphasize = (text) => `${text}!!!!`
 const slowDown = (text) => text.split("").join(" ")
 
-const result = composer(
+const result = composer2(
     shout,
     emphasize,
     slowDown
