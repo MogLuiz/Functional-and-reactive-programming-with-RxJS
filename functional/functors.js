@@ -5,4 +5,14 @@ const newNums = nums
                     .map(num => num * 2)
 
 
-console.log( nums, newNums )                    
+console.log(nums, newNums)                    
+
+function typeSafe(value) {
+    return {
+        value,
+        map(fn) {
+            const newValue = fn(this.value)
+            return typeSafe(newValue)
+        }
+    }
+}
