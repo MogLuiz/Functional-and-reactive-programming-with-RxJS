@@ -10,7 +10,11 @@ const newNums = nums
 function typeSafe(value) {
     return {
         value,
+        isInvalid() {
+            return this.value === null || this.value === undefined
+        },
         map(fn) {
+            if(this.isInvalid()) return typeSafe(null)
             const newValue = fn(this.value)
             return typeSafe(newValue)
         }
@@ -19,7 +23,7 @@ function typeSafe(value) {
 
 const result = typeSafe("This is a text")
     .map(t => t.toUpperCase())
-    .map(t => `${t}!!!`)
+    .map(t => null)
     .map(t => t.split("").join(" "))
 
 console.log(result.value)
