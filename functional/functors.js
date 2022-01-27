@@ -17,13 +17,18 @@ function typeSafe(value) {
             if(this.isInvalid()) return typeSafe(null)
             const newValue = fn(this.value)
             return typeSafe(newValue)
+        },
+        flatMap(fn) {
+            if(this.isInvalid()) return null
+            const newValue = fn(this.value)
+            return newValue
         }
     }
 }
 
 const result = typeSafe("This is a text")
     .map(t => t.toUpperCase())
-    .map(t => null)
-    .map(t => t.split("").join(" "))
+    .map(t => `${t}!!!`)
+    .flatMap(t => t.split("").join(" "))
 
-console.log(result.value)
+console.log(result)
