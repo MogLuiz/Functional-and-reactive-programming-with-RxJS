@@ -1,12 +1,14 @@
 const letters = [
-    "O", "l", "á", 
-    " ",
-    "M", "u", "n", "d", "o",
-    "!", "!", "!"
+    ["O",[ "l"], "á"], 
+    [" "],
+    ["M", ["u", "n"], "d", "o"],
+    ["!", "!", "!"]
 ]
 
-const result = letters
-    .map(l => l.toUpperCase())
-    .reduce((a, b) => a + b)
+console.log(letters.flat(2))
 
-console.log(result)
+// const result = letters
+//     .map(l => l.toUpperCase())
+//     .reduce((a, b) => a + b)
+
+// console.log(result)
