@@ -5,7 +5,7 @@ const newNums = nums
                     .map(num => num * 2)
 
 
-console.log(nums, newNums)                    
+// console.log(nums, newNums)                    
 
 function typeSafe(value) {
     return {
@@ -16,3 +16,10 @@ function typeSafe(value) {
         }
     }
 }
+
+const result = typeSafe("This is a text")
+    .map(t => t.toUpperCase())
+    .map(t => `${t}!!!`)
+    .map(t => t.split("").join(" "))
+
+console.log(result.value)
