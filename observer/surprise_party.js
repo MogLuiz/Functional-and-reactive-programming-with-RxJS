@@ -13,5 +13,14 @@ const getResponse = (question) => {
     })
 }
 
+const eventInterestedOBSERVER = () => {
+    setTimeout(() => {
+        console.log("N: Apagar as luzes")
+        console.log("N: Pedir Silêncio")
+        console.log("N: Supriseeeee!!!")
+    }, 2000)
+}
+
+
 getResponse("this is a test? ")
     .then(console.log)
