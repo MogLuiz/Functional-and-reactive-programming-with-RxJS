@@ -21,16 +21,18 @@ const eventInterestedOBSERVER = () => {
     }, 2000)
 }
 
-const otherEventInterestedOBSERVER = () => {
+const otherEventInterestedOBSERVER = (event) => {
     setTimeout(() => {
         console.log("S: Monitorando o barulho")
+        console.log(`S: ${event.resp}`)
+        console.log(`S: ${event.date}`)
     }, 2000)
 }
 
 const eventDetectSUBJECT = async (interestings) => {
     while(true) {
         const response = await getResponse("A namorada chegou? (s/N/q) ")
-        if(response.toLowerCase() === "s") interestings?.forEach(interesting => interesting())
+        if(response.toLowerCase() === "s") interestings?.forEach(interesting => interesting({ response, date: Date.now() }))
         if(response.toLowerCase() === "q") break
     } 
 }
