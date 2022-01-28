@@ -21,6 +21,11 @@ const eventInterestedOBSERVER = () => {
     }, 2000)
 }
 
+const otherEventInterestedOBSERVER = () => {
+    setTimeout(() => {
+        console.log("S: Monitorando o barulho")
+    }, 2000)
+}
 
 getResponse("this is a test? ")
     .then(console.log)
