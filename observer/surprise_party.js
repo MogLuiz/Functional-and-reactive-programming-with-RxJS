@@ -27,9 +27,13 @@ const otherEventInterestedOBSERVER = () => {
     }, 2000)
 }
 
-const eventDetectSUBJECT = (interestings) => {
-    interestings?.forEach(interesting => interesting())
+const eventDetectSUBJECT = async (interestings) => {
+    while(true) {
+        const response = await getResponse("A namorada chegou? (s/N/q) ")
+        if(response.toLowerCase() === "s") interestings?.forEach(interesting => interesting())
+        if(response.toLowerCase() === "q") break
+    } 
 }
 
 
-eventDetectSUBJECT(null)
+eventDetectSUBJECT([otherEventInterestedOBSERVER, eventInterestedOBSERVER])
