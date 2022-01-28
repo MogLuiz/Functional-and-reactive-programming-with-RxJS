@@ -27,5 +27,9 @@ const otherEventInterestedOBSERVER = () => {
     }, 2000)
 }
 
-getResponse("this is a test? ")
-    .then(console.log)
+const eventDetectSUBJECT = (interestings) => {
+    interestings?.forEach(interesting => interesting())
+}
+
+
+eventDetectSUBJECT(null)
