@@ -16,7 +16,14 @@ const numbersGenerate = () => {
 }
 
 const timer1 = numbersGenerate()
-timer1.start(number => console.log(`#1: ${number * 2}`), 1000)
+const exec1 = timer1.start(number => console.log(`#1: ${number * 2}`), 1000)
+
 
 const timer2 = numbersGenerate()
-timer2.start(number => console.log(`$2: ${number + 100}`), 2000)
+const exec2 = timer2.start(number => console.log(`$2: ${number + 100}`), 2000)
+
+setTimeout(() => {
+    exec1.stop()
+    exec2.stop()
+},10000)
+
