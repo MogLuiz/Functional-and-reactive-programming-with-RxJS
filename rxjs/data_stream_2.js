@@ -20,4 +20,9 @@ const generateElement = (array) => {
 }
 
 const timer1 = generateElement(numbers)
-timer1.start(num => console.log(Math.pow(2, num)))
+const exec1 = timer1.start(num => console.log(Math.pow(2, num)))
+
+setTimeout(() => exec1.stop(), 4000)
+
+generateElement([["Luizin", "do", "grau"], ["Lucas", "Souza"], [10, 24, 631]])
+    .start(console.log)
