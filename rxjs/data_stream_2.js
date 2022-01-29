@@ -5,7 +5,7 @@ const generateElement = (array) => {
         start(fn) {
             let index = 0
             const i = setInterval(() => {
-                if(index >= array.length) clearInterval(i)
+                if(index >= array.length - 1) clearInterval(i)
                 fn(array[index])
                 index++
             }, 1000)
@@ -18,3 +18,6 @@ const generateElement = (array) => {
         }
     }
 }
+
+const timer1 = generateElement(numbers)
+timer1.start(num => console.log(Math.pow(2, num)))
