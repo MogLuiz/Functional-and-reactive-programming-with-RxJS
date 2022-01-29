@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MogLuiz/Functional-and-reactive-programming-with-RxJS/issues"
   },
-  "homepage": "https://github.com/MogLuiz/Functional-and-reactive-programming-with-RxJS#readme"
+  "homepage": "https://github.com/MogLuiz/Functional-and-reactive-programming-with-RxJS#readme",
+  "dependencies": {
+    "rxjs": "^7.5.2"
+  }
 }
