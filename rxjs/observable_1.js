@@ -12,6 +12,9 @@ const observer = new Observable(subscriber => {
     subscriber.next("very")
     setTimeout(() => subscriber.next("coool"), 400)
     subscriber.next("cool")
+    // Significa que eu finalizei meu observable e não tenho mais nada para mandar.
+    // Logo, não será mandando mais nenhum valor a partir desse observable.
+    subscriber.complete()
 })
 
 observer.subscribe(console.log)
