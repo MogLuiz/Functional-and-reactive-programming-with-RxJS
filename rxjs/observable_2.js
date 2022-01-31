@@ -11,4 +11,8 @@ const observer = new Observable(subscriber => {
     subscriber.error("What problem??")
 })
 
-observer.subscribe(console.log)
+observer.subscribe({ 
+    next: console.log, 
+    error: err => console.log(`Error: ${err}`), 
+    complete: () => console.log("Observable is completed") 
+})
